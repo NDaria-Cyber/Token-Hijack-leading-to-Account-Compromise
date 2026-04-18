@@ -6,22 +6,23 @@
 
 ## Summary 
 
-This report documents how a Windows machine got infected with malware after user executed a suspicious .exe file, later leading to account compromise due to token hijacking.
+This report documents how a Windows machine got infected with malware (Raccon infostealer) after user executed a malicious .exe file from a compromised legitimate looking website since the user didn't verify file source.
 
 ## Observations
 
-- Multiple phising messages were being sent by user, but with no user execution.
+- Multiple phishing messages were being sent by user, but with no user execution.
 - A few suspicious logins from unreachable geolocations for the user
 
 ## Analysis
 
-- After a full system scan, security tools have discovered multiple 'Infostealers' trojans
-- Account email had been changed before compromising for digital platform ( 1:47 PM EET, UTC+2)
-- Account privileges settings had been changed (MITRE T1098, Login Verification OFF), suggesting account compromise and manipulation (2:14 PM EET, UTC+2)
-- Soon after, on a social media application 1, user's account had been compromised and used to send phishing messages (2:15 PM EET,UTC+2)
-- Social media application 2 sent an alert of an unauthorized, suspicious Windows login ( 11:00 PM EET, UTC+2)
-- Unauthorized access was used to send phising messages by user on social media application 2 ( 11 :15 PM EET, UTC+2)
-- Later, unusual sign-ins alerts had been provided from Microsoft services ( 11:30 PM EET, UTC+2).These were impossible to reach geolocations for user at the time.
+- After a full system scan, security tools have discovered multiple 'Infostealers' trojans, such as Raccon infostealer
+- Account email had been changed before compromise on a digital platform ( 1:47 PM EET, UTC+2). MITRE : T1003 (OS Credential Dumping), T1555 (Credentials from Web Browser).The malware stole session tokens from browser memory.
+- Account privileges settings had been changed ( Two-Factor Authentication disabled), suggesting account compromise and manipulation (2:14 PM EET, UTC+2). MITRE : T1098.002 (Account Manipulation - Modify User Account), T1556 (Modify Authentication Process). This allows the attacker to maintain access without triggering 2FA alerts.
+- Soon after on Discord, user's account had been compromised and used to send phishing messages (2:15 PM EET,UTC+2). MITRE : T1550.001 (Use Alternate Authentication Material - Pass the Cookie/Token)
+- Instagram sent an alert of an unauthorized, suspicious Windows login ( 11:00 PM EET, UTC+2). MITRE : T1078 (Valid Accounts).
+- Unauthorized access was used to send phishing messages by user on Instagram ( 11 :15 PM EET, UTC+2).MITRE: T1550.001 (Use Alternate Authentication Material - Pass the Cookie/Token)
+- Later, unusual sign-ins alerts had been provided by Microsoft 365 ( 11:30 PM EET, UTC+2) from impossible geolocations.MITRE: T1078.001 (Valid Accounts) + T1550.001 (Use Alternate Authentication Material).
+
 
 ## Advanced Behaviour Observed
 
@@ -44,14 +45,20 @@ This report documents how a Windows machine got infected with malware after user
 ## Impact
 
 - Confirmed various account compromises
-- Expose of sensible data to the attacker (personal messages)
+- Expose of sensitive data to the attacker (personal messages)
 - Loss of control of user's own account
 - Potential loss of accounts
 - Session abuse through unauthorized access
 
+## Recommendations 
+- Avoid executing unknown .exe files
+- Enable end-point security protection
+- Verifiy file and file source before executing
+- Use browser sandboxing
+
 ## Supporting evidence
 
-The following alerts show unknown devices or locations.While they don't conclude the proof by themselves, they corelate with the timeline of the malware infection and the idea of token theft.
+The following alerts show unknown devices or locations.While they don't conclude the proof by themselves, they correlate with the timeline of the malware infection and the idea of token theft.
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/90e56e8d-8ab2-4bc7-a02d-df1f159616d6" />
 
