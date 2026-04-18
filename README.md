@@ -6,7 +6,7 @@
 
 ## Summary 
 
-This report documents how a Windows machine got infected with malware (Raccon infostealer) after user executed a malicious .exe file from a compromised legitimate looking website since the user didn't verify file source.
+This report documents how a Windows machine got infected with malware (Raccoon infostealer) after user executed a malicious .exe file from a compromised legitimate looking website since the user didn't verify file source.
 
 ## Observations
 
@@ -15,9 +15,9 @@ This report documents how a Windows machine got infected with malware (Raccon in
 
 ## Analysis
 
-- After a full system scan, security tools have discovered multiple 'Infostealers' trojans, such as Raccon infostealer
-- Account email had been changed before compromise on a digital platform ( 1:47 PM EET, UTC+2). MITRE : T1003 (OS Credential Dumping), T1555 (Credentials from Web Browser).The malware stole session tokens from browser memory.
-- Account privileges settings had been changed ( Two-Factor Authentication disabled), suggesting account compromise and manipulation (2:14 PM EET, UTC+2). MITRE : T1098.002 (Account Manipulation - Modify User Account), T1556 (Modify Authentication Process). This allows the attacker to maintain access without triggering 2FA alerts.
+- After a full system scan, security tools have discovered multiple 'Infostealers' trojans, such as Raccoon infostealer
+- Account email had been changed before compromise on a digital platform ( 1:47 PM EET, UTC+2). MITRE : T1555 (Credentials from Web Browser).The malware stole session tokens from browser memory.
+- Account privileges settings had been changed ( Two-Factor Authentication disabled), suggesting account compromise and manipulation (2:14 PM EET, UTC+2). MITRE : T1098.002 (Account Manipulation - Modify User Account). This allows the attacker to maintain access without triggering 2FA alerts.
 - Soon after on Discord, user's account had been compromised and used to send phishing messages (2:15 PM EET,UTC+2). MITRE : T1550.001 (Use Alternate Authentication Material - Pass the Cookie/Token)
 - Instagram sent an alert of an unauthorized, suspicious Windows login ( 11:00 PM EET, UTC+2). MITRE : T1078 (Valid Accounts).
 - Unauthorized access was used to send phishing messages by user on Instagram ( 11 :15 PM EET, UTC+2).MITRE: T1550.001 (Use Alternate Authentication Material - Pass the Cookie/Token)
@@ -27,7 +27,7 @@ This report documents how a Windows machine got infected with malware (Raccon in
 ## Advanced Behaviour Observed
 
 - All things considered, these lead to a token theft (token hijacking) rather than credential theft.
-- The hacker did not know the password,nor the username and only had the token and session cookies, as given by the infostealers.
+- There is no evidence of credential use. Just the token and session cookies, as given by the infostealers.
 - In addition, the hacker did not try to  change the account's password which indicates that spreading malware in a short period of time was more important than the user account itself.
 - After an additional analysis, logging out the user from all sessions had stopped the phishing emails from being sent, which confirms the idea of token hijacking.Once the user logged out, the session cookies and tokens have expired.
 - Moreover, despite removing the infostealers, before user could change/log out from the sessions, the next day the user's account has been compromised.This means that the hacker had stolen the tokens before the malware was removed.
@@ -45,9 +45,9 @@ This report documents how a Windows machine got infected with malware (Raccon in
 ## Impact
 
 - Confirmed various account compromises
-- Expose of sensitive data to the attacker (personal messages)
+- Exposureof sensitive data to the attacker (personal messages)
 - Loss of control of user's own account
-- Potential loss of accounts
+- Risk of permanent account loss
 - Session abuse through unauthorized access
 
 
@@ -65,7 +65,7 @@ The following alerts show unknown devices or locations.While they don't conclude
 ## Recommendations 
 - Avoid executing unknown .exe files
 - Enable end-point security protection
-- Verifiy file and file source before executing
+- Verify file and file source before executing
 - Use browser sandboxing
 
 ## Conclusion
