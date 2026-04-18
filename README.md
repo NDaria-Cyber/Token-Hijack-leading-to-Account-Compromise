@@ -50,11 +50,7 @@ This report documents how a Windows machine got infected with malware (Raccon in
 - Potential loss of accounts
 - Session abuse through unauthorized access
 
-## Recommendations 
-- Avoid executing unknown .exe files
-- Enable end-point security protection
-- Verifiy file and file source before executing
-- Use browser sandboxing
+
 
 ## Supporting evidence
 
@@ -66,9 +62,15 @@ The following alerts show unknown devices or locations.While they don't conclude
 
 <img width="1061" height="238" alt="Login3" src="https://github.com/user-attachments/assets/5f441d25-49fb-410e-abb7-5ff3f315f883" />
 
+## Recommendations 
+- Avoid executing unknown .exe files
+- Enable end-point security protection
+- Verifiy file and file source before executing
+- Use browser sandboxing
+
 ## Conclusion
 
-- This incident shows a confirmed account compromise due to malware (such as Infostealers) after user executed a suspicious, .exe file.
+- This incident shows a confirmed account compromise due to malware (such as Infostealers) after user executed a suspicious, .exe file.The Windows machine and user's accounts have been successfully recovered.
 
 **Note:** This analysis is based on a real-world incident encountered during personal system monitoring.
 
