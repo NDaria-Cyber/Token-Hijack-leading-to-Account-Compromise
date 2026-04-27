@@ -18,9 +18,9 @@ This report documents how a Windows machine got infected with malware (Raccoon I
 
 **Technical Level** : the malware was able to persist and hijack the accounts since :
 
-- The installer of the application stopped at 100% for a long period of time which allowed the malware to persist
+- The installer of the application stopped at 100% for a long period of time which might have provided time for the malware to execute background payload
 - No real-time protection enabled on the machine
-- Machine was connected to Wifi, making it easier for the attacker to connect and execute payload
+- Malware didn't depend on Wifi, but on the execution of the malicious file
 - No VPN /VM/Sandbox connected, hence the attacker connected directly to the host machine
 - Lack of MFA/2FA (Multiple Factor Authentication/2 Factor Authentication) in some accounts
 
@@ -50,7 +50,7 @@ This report documents how a Windows machine got infected with malware (Raccoon I
 - After an additional analysis, logging out the user from all sessions had stopped the phishing emails from being sent, which confirms the idea of token hijacking.Once the user logged out, the session cookies and tokens have expired.
 - Moreover, despite removing the infostealers, before user could change/log out from the sessions, the next day the user's account has been compromised.This means that the hacker had stolen the tokens before the malware was removed. Even with the removal, the cookies had already been stolen.
 - The phishing messages were sent within seconds one after another, indicating tools, AI bots or automated scripts that were used in this compromise. ( Eg : 50 messages at the same hour). Another hint is that all DM's were muted so the user cannot be informed by the account compromise or an utility of the automated script/AI bot.
-- Session cookies/ Token theft is very common in 2026, especially in Social Media Platforms in order to share phishing messages quickly in order to make more victims and more money.
+- Session cookies/ Token theft is common in account takeovers incidents.
 
 
 ## MITRE ATT&CK MAPPING 
@@ -95,9 +95,11 @@ The following alerts show unknown devices or locations.While they don't conclude
 
 ## Recommendations 
 - Avoid executing unknown .exe files from untrusted sources
-- Enable end-point security protection 
+- Revoke all active sessions after compromise
 - Verify file and file source before executing
 - Use browser sandboxing for suspicious or for files you don't trust
+- Enable MFA on all accounts
+- Monitor login activity and new device alerts
 
 
 ## Conclusion
