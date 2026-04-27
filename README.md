@@ -94,11 +94,11 @@ The following alerts show unknown devices or locations.While they don't conclude
 <img width="1061" height="238" alt="Login3" src="https://github.com/user-attachments/assets/5f441d25-49fb-410e-abb7-5ff3f315f883" />
 
 ## Recommendations 
-- Avoid executing unknown .exe files from untrusted sources
-- Revoke all active sessions after compromise
+- Do not execute .exe files from untrusted sources without verification
 - Verify file and file source before executing
-- Use browser sandboxing for suspicious or for files you don't trust
-- Enable MFA on all accounts
+- Enforce MFA/2FA on all accounts
+- Deploy browser sandboxing or file isolation for untrusted downloads
+- Implement automatic session timeout and forced re-authentication (eg: 30 times of inactivity)
 - Monitor login activity and new device alerts
 
 
