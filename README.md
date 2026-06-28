@@ -49,7 +49,7 @@ This report documents how a Windows machine got infected with malware (Raccoon I
 - In addition, the hacker did not try to  change the account's password which indicates that spreading malware in a short period of time was more important than the user account itself.
 - After an additional analysis, logging out the user from all sessions had stopped the phishing emails from being sent, which confirms the idea of token hijacking.Once the user logged out, the session cookies and tokens have expired.
 - Moreover, despite removing the infostealers, before user could change/log out from the sessions, the next day the user's account has been compromised.This means that the hacker had stolen the tokens before the malware was removed. Even with the removal, the cookies had already been stolen.
-- The phishing messages were sent within seconds one after another, indicating tools, AI bots or automated scripts that were used in this compromise. ( Eg : 50 messages at the same hour). Another hint is that all DM's were muted so the user cannot be informed by the account compromise or an utility of the automated script/AI bot.
+- The phishing messages were sent within seconds one after another, indicating tools, AI bots or automated scripts that were used in this compromise. ( Eg : 50 messages in the same minute). Another hint is that all DM's were muted so the user cannot be informed by the account compromise or an utility of the automated script/AI bot.
 - Session cookies/ Token theft is common in account takeovers incidents.
 
 
